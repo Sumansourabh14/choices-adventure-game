@@ -1,23 +1,45 @@
 import { useState } from 'react';
 import './App.css';
-import EndScreen from './components/EndScreen';
-import StartScreen from './components/StartScreen';
+import TitleScreen from './components/TitleScreen';
 import Sequence1 from './components/Sequence1';
 import Sequence2 from './components/Sequence2';
+import EndScreen from './components/EndScreen';
+import MainMenu from './components/main_menu/MainMenu';
+import ExitGame from './components/main_menu/ExitGame';
+import HowToPlay from './components/main_menu/HowToPlay';
+import Characters from './components/main_menu/Characters';
 
 function App() {
-  // const [mode, setMode] = useState("Sequence2");
   const [mode, setMode] = useState("start");
 
   return (
     <main>
-      {(mode === "start") && <StartScreen onStartClick={() => setMode("sequence1")} />}
+      <div className='mx-auto'>
+        {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
 
-      {(mode === "sequence1") && <Sequence1 onFirstChoiceClick={() => setMode("sequence2")} onSecondChoiceClick={() => setMode("end")} />}
+        {(mode === "main-menu") && (
+          <>
+            <MainMenu 
+              onFirstOptionClick={() => setMode("sequence1")} 
+              onSecondOptionClick={() => setMode("how-to-play")}
+              onThirdOptionClick={() => setMode("characters")}
+              onFourthOptionClick={() => setMode("exit-game")}
+            />
+          </>
+        )}
 
-      {(mode === "sequence2") && <Sequence2 onFirstChoiceClick={() => setMode("end")} onSecondChoiceClick={() => setMode("start")} />}
+        {(mode === "how-to-play") && <HowToPlay onFirstOptionClick={() => setMode("main-menu")} />}
 
-      {(mode === "end") && <EndScreen />}
+        {(mode === "characters") && <Characters onFirstOptionClick={() => setMode("main-menu")} /> }
+
+        {(mode === "exit-game") && <ExitGame />}
+
+        {(mode === "sequence1") && <Sequence1 onFirstChoiceClick={() => setMode("sequence2")} onSecondChoiceClick={() => setMode("end")} />}
+        
+        {(mode === "sequence2") && <Sequence2 onFirstChoiceClick={() => setMode("end")} onSecondChoiceClick={() => setMode("start")} />}
+        
+        {(mode === "end") && <EndScreen />}
+      </div>
     </main>
   );
 }
