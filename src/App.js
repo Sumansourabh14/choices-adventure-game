@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import StartScreen from './components/StartScreen';
+import TitleScreen from './components/TitleScreen';
 import Sequence1 from './components/Sequence1';
 import Sequence2 from './components/Sequence2';
 import EndScreen from './components/EndScreen';
@@ -11,7 +11,7 @@ function App() {
   return (
     <main>
       <div className='container px-8 mx-auto'>
-        {(mode === "start") && <StartScreen onStartClick={() => setMode("sequence1")} />}
+        {(mode === "start") && <TitleScreen onStartClick={() => setMode("sequence1")} />}
 
         {(mode === "sequence1") && <Sequence1 onFirstChoiceClick={() => setMode("sequence2")} onSecondChoiceClick={() => setMode("end")} />}
         
