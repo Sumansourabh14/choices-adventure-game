@@ -12,3 +12,22 @@
     transform: scale(1.05);
   }
 }
+
+ul li {
+  /* border: 2px solid red; */
+  padding: 0.5rem;
+  background-color: slategray;
+}
+
+.animate-bg-change-slow {
+  animation: bg-change-slow 24s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+@keyframes bg-change-slow {
+  0%, 100% {
+    background-color: white;
+  }
+  50% {
+    background-color: slategray;
+  }
+}

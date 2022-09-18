@@ -7,6 +7,7 @@ import EndScreen from './components/EndScreen';
 import MainMenu from './components/main_menu/MainMenu';
 import ExitGame from './components/main_menu/ExitGame';
 import HowToPlay from './components/main_menu/HowToPlay';
+import Characters from './components/main_menu/Characters';
 
 function App() {
   const [mode, setMode] = useState("start");
@@ -21,12 +22,15 @@ function App() {
             <MainMenu 
               onFirstOptionClick={() => setMode("sequence1")} 
               onSecondOptionClick={() => setMode("how-to-play")}
-              onThirdOptionClick={() => setMode("exit-game")}
+              onThirdOptionClick={() => setMode("characters")}
+              onFourthOptionClick={() => setMode("exit-game")}
             />
           </>
         )}
 
         {(mode === "how-to-play") && <HowToPlay onFirstOptionClick={() => setMode("main-menu")} />}
+
+        {(mode === "characters") && <Characters onFirstOptionClick={() => setMode("main-menu")} /> }
 
         {(mode === "exit-game") && <ExitGame />}
 
