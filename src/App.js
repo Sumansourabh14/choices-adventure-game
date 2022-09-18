@@ -4,7 +4,9 @@ import TitleScreen from './components/TitleScreen';
 import Sequence1 from './components/Sequence1';
 import Sequence2 from './components/Sequence2';
 import EndScreen from './components/EndScreen';
-import MainMenu from './components/MainMenu';
+import MainMenu from './components/main_menu/MainMenu';
+import ExitGame from './components/main_menu/ExitGame';
+import HowToPlay from './components/main_menu/HowToPlay';
 
 function App() {
   const [mode, setMode] = useState("start");
@@ -14,7 +16,19 @@ function App() {
       <div className='mx-auto'>
         {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
 
-        {(mode === "main-menu") && <MainMenu onFirstOptionClick={() => setMode("sequence1")} /> }
+        {(mode === "main-menu") && (
+          <>
+            <MainMenu 
+              onFirstOptionClick={() => setMode("sequence1")} 
+              onSecondOptionClick={() => setMode("how-to-play")}
+              onThirdOptionClick={() => setMode("exit-game")}
+            />
+          </>
+        )}
+
+        {(mode === "how-to-play") && <HowToPlay onFirstOptionClick={() => setMode("main-menu")} />}
+
+        {(mode === "exit-game") && <ExitGame />}
 
         {(mode === "sequence1") && <Sequence1 onFirstChoiceClick={() => setMode("sequence2")} onSecondChoiceClick={() => setMode("end")} />}
         
