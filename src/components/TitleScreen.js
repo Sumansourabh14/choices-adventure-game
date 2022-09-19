@@ -13,11 +13,11 @@ function TitleScreen(props) {
 
     return (
         <motion.div
-            key="title-screen"
-            initial={{opacity: 0, scale: 0.5}}
+            key="title"
+            initial={{opacity: 0.4, scale: 0.8}}
             animate={{opacity: 1, scale: 1}}
-            transition={{duration: 1.5}}
-            exit={{opacity: 0, scale: 2}}
+            transition={{duration: 1, ease: "easeInOut"}}
+            // exit={{opacity: 0, scale: 2}}
 
             tabIndex="0"
             onKeyDown={props.onStartClick}

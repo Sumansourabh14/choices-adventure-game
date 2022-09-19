@@ -7,12 +7,12 @@ import { styles } from '../../styles';
 
 function MainMenu(props) {
     return (
-        <div
-            // key="a"
-            // initial={{opacity: 0, scale: 0.5}}
-            // animate={{opacity: 1, scale: 1}}
-            // transition={{duration: 1.5}}
-            // exit={{opacity: 0, scale: 2}}
+        <motion.div
+            key="a"
+            initial={{opacity: 0, scale: 0.5}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{duration: 1.5, ease: "easeInOut"}}
+            exit={{opacity: 0, scale: 2}}
 
             className='flex flex-col justify-center items-center h-screen'>
             <h1 className='font-bold text-3xl'>{mainMenuData.text}</h1>
@@ -47,7 +47,7 @@ function MainMenu(props) {
                     />
                 </li>
             </ul>
-        </div>
+        </motion.div>
     )
 }
 
