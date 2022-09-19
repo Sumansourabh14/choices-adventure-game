@@ -8,6 +8,7 @@ import MainMenu from './components/main_menu/MainMenu';
 import ExitGame from './components/main_menu/ExitGame';
 import HowToPlay from './components/main_menu/HowToPlay';
 import Characters from './components/main_menu/Characters';
+import {motion, AnimatePresence} from 'framer-motion';
 
 function App() {
   const [mode, setMode] = useState("start");
@@ -15,18 +16,22 @@ function App() {
   return (
     <main>
       <div className='mx-auto'>
-        {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
+        <AnimatePresence>
+          {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
+        </AnimatePresence>
 
-        {(mode === "main-menu") && (
-          <>
-            <MainMenu 
-              onFirstOptionClick={() => setMode("sequence1")} 
-              onSecondOptionClick={() => setMode("how-to-play")}
-              onThirdOptionClick={() => setMode("characters")}
-              onFourthOptionClick={() => setMode("exit-game")}
-            />
-          </>
-        )}
+        <AnimatePresence>
+          {(mode === "main-menu") && (
+            <>
+              <MainMenu
+                onFirstOptionClick={() => setMode("sequence1")}
+                onSecondOptionClick={() => setMode("how-to-play")}
+                onThirdOptionClick={() => setMode("characters")}
+                onFourthOptionClick={() => setMode("exit-game")}
+              />
+            </>
+          )}
+        </AnimatePresence>
 
         {(mode === "how-to-play") && <HowToPlay onFirstOptionClick={() => setMode("main-menu")} />}
 
