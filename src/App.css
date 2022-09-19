@@ -19,7 +19,7 @@ ul li {
   background-color: slategray;
 }
 
-.animate-bg-change-slow {
+/* .animate-bg-change-slow {
   animation: bg-change-slow 24s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
 }
 
@@ -29,5 +29,18 @@ ul li {
   }
   50% {
     background-color: slategray;
+  }
+} */
+
+.animate-choice {
+  animation: bg-change-slow 5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+@keyframes bg-change-slow {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.95;
   }
 }
