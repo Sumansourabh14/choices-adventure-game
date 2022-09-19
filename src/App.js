@@ -8,7 +8,7 @@ import MainMenu from './components/main_menu/MainMenu';
 import ExitGame from './components/main_menu/ExitGame';
 import HowToPlay from './components/main_menu/HowToPlay';
 import Characters from './components/main_menu/Characters';
-import {motion, AnimatePresence} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [mode, setMode] = useState("start");
@@ -18,9 +18,9 @@ function App() {
       <div className='mx-auto'>
         <AnimatePresence>
           {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
-        </AnimatePresence>
+        {/* </AnimatePresence>
 
-        <AnimatePresence>
+        <AnimatePresence> */}
           {(mode === "main-menu") && (
             <>
               <MainMenu
