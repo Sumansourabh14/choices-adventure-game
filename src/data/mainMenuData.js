@@ -1,9 +1,9 @@
 export const mainMenuData = {
-    text: "Welcome to Choices",
+    text: "Main Menu",
 }
 
 export const newGameData = {
-    text: "Start a new game", 
+    text: "Story mode", 
 }
 
 export const howToPlayData = {

@@ -1,5 +1,12 @@
 export const sequence1 = {
-    story: "This is a game",
+    story: [
+        {
+            p: "This is a game paragraph 1.",
+        },
+        {
+            p: "This is a game paragraph 2.",
+        },
+    ],
     question: "What do you say?",
     choices: [
         {
