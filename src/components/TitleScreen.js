@@ -17,7 +17,6 @@ function TitleScreen(props) {
             initial={{opacity: 0.4, scale: 0.8}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 1, ease: "easeInOut"}}
-            // exit={{opacity: 0, scale: 2}}
 
             tabIndex="0"
             onKeyDown={props.onStartClick}

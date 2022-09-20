@@ -1,7 +1,7 @@
 import React from 'react';
-import { sequence1 } from '../story/sequence1Story';
-import { styles } from '../styles';
-import ChoiceBtn from './ChoiceBtn';
+import { sequence1 } from '../../story/sequence1Story';
+import { styles } from '../../styles';
+import ChoiceBtn from '../ChoiceBtn';
 import { motion } from 'framer-motion';
 
 function Sequence1(props) {
