@@ -18,7 +18,7 @@ function MainMenu(props) {
             <h1 className='font-bold text-4xl animate-pulse uppercase'>{mainMenuData.text}</h1>
             <ul className='mt-10 w-5/6 h-2/5 lg:h-3/5 grid grid-cols-2 lg:grid-cols-3 gap-2'>
                 <li className={`${styles.flexBox} ${styles.mainMenuOptions} relative col-span-2 lg:col-span-1 lg:row-span-2`} onClick={props.onFirstOptionClick}>
-                    <p className='absolute top-2 left-2 font-bold text-xl text-gray-100'>Start a new game</p>
+                    <p className='absolute top-2 left-2 font-bold text-xl'>Start a new game</p>
                     <p className={`${styles.mainMenuOptionsTitle}`}>{newGameData.text}</p>
                     <FontAwesomeIcon
                         icon={faGamepad}
@@ -39,7 +39,7 @@ function MainMenu(props) {
                         className={`${styles.mainMenuIcons}`}
                     />
                 </li>
-                <li className={`${styles.flexBox} ${styles.mainMenuOptions} relative`} onClick={props.onFourthOptionClick}>
+                <li className={`${styles.flexBox} ${styles.mainMenuOptions} relative hover:bg-red-500`} onClick={props.onFourthOptionClick}>
                     <p className={`${styles.mainMenuOptionsTitle}`}>{exitGameData.text}</p>
                     <FontAwesomeIcon
                         icon={faPowerOff}
