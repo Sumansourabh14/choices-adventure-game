@@ -8,7 +8,7 @@ function TitleScreen(props) {
 
     function playAudio() {
         setTitleAudio(titleAudio.play());
-        titleAudio.loop = true;
+        // titleAudio.loop = true;
     }
 
     return (
