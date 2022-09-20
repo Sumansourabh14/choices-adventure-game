@@ -15,7 +15,7 @@ function MainMenu(props) {
             exit={{opacity: 0, scale: 2}}
 
             className='flex flex-col justify-center items-center h-screen'>
-            <h1 className='font-bold text-3xl'>{mainMenuData.text}</h1>
+            <h1 className='font-bold text-4xl animate-pulse uppercase'>{mainMenuData.text}</h1>
             <ul className='mt-10 w-5/6 h-2/5 lg:h-3/5 grid grid-cols-2 lg:grid-cols-3 gap-2'>
                 <li className={`${styles.flexBox} ${styles.mainMenuOptions} relative col-span-2 lg:col-span-1 lg:row-span-2`} onClick={props.onFirstOptionClick}>
                     <p className='absolute top-2 left-2 font-bold text-xl text-gray-100'>Start a new game</p>
