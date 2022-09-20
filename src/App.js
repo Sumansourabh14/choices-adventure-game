@@ -16,7 +16,7 @@ function App() {
   const [mode, setMode] = useState("start");
 
   return (
-    <main>
+    <main className='bg-stone-900 text-white'>
       <div className='mx-auto'>
         {/* <AnimatePresence> */}
           {(mode === "start") && <TitleScreen onStartClick={() => setMode("main-menu")} />}
@@ -44,7 +44,7 @@ function App() {
         {/* Prologue */}
         {(mode === "prologue-title") && <PrologueTitle onBtnClick={() => setMode("prologue-story")} />}
 
-        {(mode === "prologue-story") && <PrologueStory onFirstChoiceClick={() => setMode("sequence1")} />}
+        {(mode === "prologue-story") && <PrologueStory onBtnClick={() => setMode("sequence1")} />}
 
         {/* Sequences */}
         {(mode === "sequence1") && <Sequence1 onFirstChoiceClick={() => setMode("sequence2")} onSecondChoiceClick={() => setMode("end")} />}
