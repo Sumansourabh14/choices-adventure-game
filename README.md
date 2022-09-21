@@ -2,4 +2,4 @@
 
 ## (In Progress)
 
-Made with React, Tailwind CSS.
+Made with [React](https://reactjs.org/), Tailwind CSS.
